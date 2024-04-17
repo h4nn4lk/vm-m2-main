@@ -1,0 +1,28 @@
+    {% extends "partials/layout.njk"%}
+    {% block content %}
+    <h1>hanna<sub>vaga lahe form</sub></h1>
+    {% if fname and lname and age and phone %}
+    <p>hello {{ fname }} {{ lname }}, are you {{ age }} cause at that age you are just my type</p>
+    {% endif %}
+    <form >
+         <p>
+        <label for="fname">first name</label><br>
+        <input type="fname" type="text"placeholder="Melissa" name="fname"> 
+        </p>
+  <p>
+        <label for="lname">last name</label><br>
+        <input type="lname" type="text"placeholder="Tamm" name="lname">
+          </p>
+ <p>
+        <label for="age">Age</label><br>
+        <input id="age" type="number"  min="0" max="123" step="1" placeholder="12" name="age"> 
+        </p>
+    <p>
+        <label for="phone">phone number</label><br>
+        <input type="phone" type="number" placeholder="57571139" name="phone"> 
+        </p>
+        <p>
+            <input type="submit"value="Submit">
+        </p>
+    </form>
+    {% endblock %}

@@ -1,0 +1,29 @@
+    {% extends "partials/layout.njk"%}
+    {% block title %} add{% endblock %}
+     {% block content %}
+     <style>
+        table, th, td{
+        border: 1px solid black
+        }
+     </style>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>ID</th>
+                        <td>{{movie.id}}</td>
+                    </tr>
+                       <tr>
+                        <th>name</th>
+                        <td>{{movie.name}}</td>
+                    </tr>
+                    <tr>
+                        <th>year</th>
+                        <td>{{movie.year}}</td>
+                    </tr>
+                    <tr>
+                        <th>description</th>
+                        <td>{{movie.description}}</td>
+                    </tr>
+                </tbody>
+            </table>
+    {% endblock %}

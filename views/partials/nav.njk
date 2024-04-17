@@ -1,0 +1,20 @@
+<ul>
+     <li> <a href="/">Home</a></li>
+    <li> <a href="/page2">Page2</a></li>
+    <li> <a href="/form">form</a></li>
+    <li> <a href="/circle">Circle</a></li>
+
+   {%if user%}
+    <li> <a href="/movies">movies</a></li>
+      {%endif%}
+   {%if not user%}
+
+    <li> <a href="/register">register</a></li>
+    <li> <a href="/login">log in</a></li>
+    {%else%}
+        <li>
+            {{user.name}}
+                <li><a href="/logout">Log out</a></li>
+        </li>
+    {%endif%}
+</ul>

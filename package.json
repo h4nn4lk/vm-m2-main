@@ -1,0 +1,26 @@
+{
+    "name": "vm22-m2-main",
+    "version": "1.0.0",
+    "description": "express",
+    "main": "server.js",
+    "scripts": {
+        "start": "nodemon -e js,json,njk -i session"
+    },
+    "keywords": [],
+    "author": "Hanna-Liisa Kaarmann",
+    "license": "ISC",
+    "dependencies": {
+        "bcrypt": "^5.1.1",
+        "cookie-parser": "^1.4.6",
+        "express": "^4.18.2",
+        "express-session": "^1.18.0",
+        "nodemon": "^3.0.3",
+        "nunjucks": "^3.2.4",
+        "sequelize": "^6.37.1",
+        "session-file-store": "^1.5.0",
+        "sqlite3": "^5.1.7"
+    },
+    "devDependencies": {
+        "sequelize-cli": "^6.6.2"
+    }
+}

@@ -1,0 +1,25 @@
+{% extends "partials/layout.njk" %}
+{% block title %}Circle Answer{%endblock%}
+{% block content %}
+
+
+<h1>Area</h1>
+    A = πr <sup>2</sup><br>
+    A = π{{ r }}<sup>2</sup><br>
+    A = π{{ r*r }}<br>
+    A = {{ a }}<br>
+    
+    <h1>Circumference</h1>
+
+    C = 2πr<br>
+    C = π{{ r * 2 }}<br>
+    C = {{ d }}<br>
+    
+    <h1>Volume</h1>
+    
+    V = 4/3πr<sup>3</sup><br>
+    V = 4/3 {{ r }}<sup>3</sup><br>
+    V = 4/3 π{{ r * r * r }}<br>
+    V = π {{ r * r * r * 4/3 }}<br>
+    V = {{ v }}<br>
+{% endblock %}
