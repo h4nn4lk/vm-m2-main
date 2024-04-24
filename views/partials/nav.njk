@@ -1,20 +1,53 @@
-<ul>
-     <li> <a href="/">Home</a></li>
-    <li> <a href="/page2">Page2</a></li>
-    <li> <a href="/form">form</a></li>
-    <li> <a href="/circle">Circle</a></li>
-
-   {%if user%}
-    <li> <a href="/movies">movies</a></li>
-      {%endif%}
-   {%if not user%}
-
-    <li> <a href="/register">register</a></li>
-    <li> <a href="/login">log in</a></li>
-    {%else%}
-        <li>
-            {{user.name}}
-                <li><a href="/logout">Log out</a></li>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Hantsiku väga väga äge lehekulg</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
         </li>
-    {%endif%}
-</ul>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/page2">LOLLAKATELE</a>
+        </li>
+             <li class="nav-item">
+          <a class="nav-link" href="/form">FORM</a>
+        </li>
+             <li class="nav-item">
+          <a class="nav-link" href="/circle">CIRCLEK</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            ADMIN
+          </a> 
+          <ul class="dropdown-menu">
+                <li> <a class= "dropdown-item" href="/movies">MOVIES</a></li>
+            </ul>
+         
+        </li>
+      </ul>
+      <form class="navbar-nav mb-2 mb-lg-0" role="search">
+        {%if not user%}
+        <li class=" nav-item me-2">
+            <a class="btn btn-sucsess" href="/register">REGISTER</a>
+        </li>
+         <li class="nav-item">
+             <a class="nav-link" href="/login">LOGIN</a>
+        </li>
+          {%else%}
+       
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            {{user.name}}
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/logout">LOGOUT</a></li>
+          </ul>
+          {%endif%}
+      </form>
+    </div>
+  </div>
+</nav>

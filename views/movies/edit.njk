@@ -2,9 +2,21 @@
     {% block title %} add{% endblock %}
      {% block content %}
     <form action="/movies/edit/{{movie.id}}" method="POST">
-        <input type="text" placeholder="movie name" name= "movie" value="{{movie.name}}">
-        <input type="number" placeholder="movie year" name= "year" value="{{movie.year}}">
-        <textarea name="description" placeholder="Movie description">{{movie.description}}</textarea>
+    <div class="mb-3">
+        <label for="name" class="form-label">name</label>
+       <input id="name" class="form-control" type="text" placeholder="movie name" name= "movie name">
+        </div>
+        <div class="mb-3">
+        <label for="year" class="form-label">year</label>
+       <input id="year" class="form-control" type="number" placeholder="movie year" name= "year">
+        </div>
+        <div class="mb-3">
+        <label for="description" class="form-label">description</label>
+       <input id="description" class="form-control" type="text" placeholder="Movie description" name= "description">
+        </div>
         <input type="submit" value = "update">
     </form>
+    <input type="text" placeholder="movie name" name= "movie" value="{{movie.name}}">
+        <input type="number" placeholder="movie year" name= "year" value="{{movie.year}}">
+        <textarea name="description" placeholder="Movie description">{{movie.description}}</textarea>
     {% endblock %}
