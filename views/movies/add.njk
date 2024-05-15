@@ -1,12 +1,24 @@
-
     {% extends "partials/layout.njk"%}
     {% block title %} add{% endblock %}
      {% block content %}
-    <form action="/movies/add" method="POST" enctype="multipart/form-data">
-        <input type="text" placeholder="movie name" name= "movie">
-        <input type="number" placeholder="movie year" name= "year">
-        <textarea name="description" placeholder="Movie description"></textarea>
-        <input type="file" name="image">
-        <input type="submit" value = "add">
+     <form action="/movies/add" method="POST" enctype='multipart/form-data'>
+        <div class="mb-3">
+                <label for="Name" class="form-label">Movie name</label>
+            <input id="Movie name" class="form-control" type="text" placeholder="Movie name" name="movie">
+                </div>
+                <div class="mb-3">
+                <label for="Year" class="form-label">Year</label>
+            <input id="Year" class="form-control" type="number" placeholder="Movie year" name="year">
+                </div>
+                <div class="mb-3">
+                <label for="Description" class="form-label">Movie description</label>
+            <input id="Movie description" class="form-control" type="text" placeholder="Movie Description" name="description">
+                </div>
+                <div>
+        <label for="formFile" class="form-label">Default file input example</label>
+        <input class="form-control" type="file" id="formFile" name='image'>
+
+        <input type="submit" value = "Update" class='mt-3'>
+        </div>
     </form>
     {% endblock %}

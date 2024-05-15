@@ -5,12 +5,24 @@
     <a class="btn btn-primary"href="/movies/add">ADD</a>
     <table class="table table-striped table-hover table-bordered">
         <thead>
-            <th>ID</th>
-            <th>name</th>
-            <th>year</th>
-            <th>description</th>
-            <th>user</th>
-            <th>actions</th>
+            <div class="mb-3">
+               <th>ID</th>
+            </div>
+            <div class="mb-3">
+                <th>name</th>
+            </div>
+            <div class="mb-3">
+                <th>year</th>
+    	    </div>
+            <div class="mb-3">
+                <th>description</th>
+            </div>
+            <div class="mb-3">
+                <th>user</th>
+            </div>
+            <div class="mb-3">
+             <th>actions</th>
+            </div>
         </thead>
         <tbody>
             {% for movie in movies%}
