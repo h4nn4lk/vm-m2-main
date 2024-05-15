@@ -5,7 +5,11 @@ const port = 3000;
 const cookieParser = require('cookie-parser');
 const { Movie, User } = require('./models/index.js');
 
-app.use(cookieParser())
+const fileUpload = require('express-fileupload');
+app.use(fileUpload());
+
+app.use(cookieParser());
+app.use(express.static('public'));
 const session = require('express-session');
 const FileStore = require('session-file-store')(session);
 app.use(session({
@@ -35,7 +39,7 @@ app.use((req, res, next) => {
 });
 
 app.get('/', async (req, res) => {
-  let pageCount = 16;
+  let pageCount = 8;
   let page = parseInt(req.query.page ?? 1);
   let offset = (page - 1) * pageCount
   //console.log('somebody visited');
@@ -47,17 +51,17 @@ app.get('/', async (req, res) => {
     
     elements[i] = i;
   }
-  if (page > 1) {
+  if (page > 2) {
     elements.push('...');
   }
   for (let i = page - 2; i <= page + 2 && i < pages && i > 0; i++) {
    
     elements[i] = i;
   }
-  if (page < pages - 3) {
+  if (page < pages - 2) {
     elements.push('...');
   }
-  for (let i = pages - 2; i < pages; i++) {
+  for (let i = pages - 2; i <= pages; i++) {
     elements[i] = i;
   }
 
